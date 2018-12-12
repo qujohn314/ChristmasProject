@@ -1,4 +1,5 @@
 
+
 import java.awt.event.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,6 +22,27 @@ public class ActionHandler implements ActionListener{
     {
         holderString.clear();
         holderInt.clear();
+    }
+    
+    public int getInt() throws InterruptedException {
+        synchronized (this.holderInt) {
+            while (this.holderInt.isEmpty())
+            {
+                this.holderInt.wait();
+            }
+            return this.holderInt.remove(0);
+        }
+    }
+    
+    public String getString() throws InterruptedException {
+        synchronized (this.holderString) {
+            while (this.holderString.isEmpty())
+            {
+                this.holderString.wait();
+            }
+
+            return this.holderString.remove(0);
+        }
     }
     
     public void actionPerformed(ActionEvent e) {

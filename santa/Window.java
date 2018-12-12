@@ -1,4 +1,4 @@
-package quincy.projects.santa;
+
 
 import java.awt.Color;
 import java.awt.Dimension;

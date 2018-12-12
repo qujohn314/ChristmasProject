@@ -1,4 +1,4 @@
-package quincy.projects.santa;
+
 
 public class Child {
 	private String address;
