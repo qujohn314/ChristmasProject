@@ -21,7 +21,7 @@ import javax.swing.text.StyledDocument;
 
 public class SantaManager extends JPanel {
 	private static final Color SANTA_RED = new Color(89,5,5);
-	private JTextPane text =  new JTextPane();
+	private JTextPane text;
 	private ActionHandler action = new ActionHandler(this);
 	private JLabel label;
 	private JPanel inputPanel, textPanel,leftPanel;
@@ -56,11 +56,11 @@ public class SantaManager extends JPanel {
 	}
 	
 	private void initChildren() {
-		 String[] names = {"Henry","Avery","Tyrone","Isha","Kelly","Melanie","Jack","James","Dennis","Quincy","Josh","Matthew","Linda","Lindy","Marissa","Chelsea","Catherine","Zack","Yusef","Yaazan","Al","Allen","Quinton","Hash","Jun","Jing","Lee","Peter","Jacob","Anthony","Luna","Samantha","Jon","Neil","Alice","Java","Bean","Sue","Billy","Lisa","Elise"};
-		 String[] lastName = {"Johnson","Krul","Gul","Jones","Hundson","Krause","Haws","Hawkinson","Black","Snape","Vanes","Donners","Hundley","Abbey","Barrot","Jenkins","Hanes","Holmes","Seebs","Emerson","Stein","Marx","Himms","Hughes","Ford","Dimble","Lee","Peters","Peterson","Rickard","Wechsler","Caesar","Moon","Bargs","Biggs","Cruz","Clause","Rickard","Hans"};
-		 String[] address = {"Midnight","Moonlight","Seeker","Mini","China","Septic","Hectic","Search","Dirt","Discovery","Paso Fino","Pandesa","Kneely","Sweet","Merry","Cream","Caroline","Main","Deppy","Rim","Wheel","Bueno","Sunset","Placent","Star","Shiny","Pencil","Arctic","Cyclical","Leather","Slaughter","Juniper","Ash","Moist","Acryllic","Flappy","Whiskey"};
+		 String[] names = {"Henry","Avery","Tyrone","Isha","Kelly","Melanie","Jack","James","Dennis","Quincy","Josh","Matthew","Linda","Lindy","Marissa","Chelsea","Catherine","Zack","Yusef","Yaazan","Al","Allen","Quinton","Hash","Jun","Jing","Lee","Peter","Jacob","Anthony","Luna","Samantha","John","Neil","Alice","Java","Bean","Sue","Billy","Lisa","Elise","Erik","Eric","Austin"};
+		 String[] lastName = {"Johnson","Krul","Gul","Jones","Hundson","Krause","Haws","Hawkinson","Black","Snape","Vanes","Donners","Hundley","Abbey","Barrot","Jenkins","Hanes","Holmes","Seebs","Emerson","Stein","Marx","Himms","Hughes","Ford","Dimble","Lee","Peters","Peterson","Rickard","Wechsler","Caesar","Moon","Bargs","Biggs","Cruz","Clause","Rickard","Hans","Ritz"};
+		 String[] address = {"Midnight","Moonlight","Seeker","Mini","China","Septic","Hectic","Paladino","Search","Dirt","Discovery","Paso Fino","Pandesa","Kneely","Sweet","Merry","Cream","Caroline","Main","Deppy","Rim","Wheel","Bueno","Sunset","Placent","Star","Shiny","Pencil","Arctic","Cyclical","Leather","Slaughter","Juniper","Ash","Moist","Acryllic","Flappy","Whiskey","Gamer","Erotic","ABC","Pacific"};
 		 String[] addMod = {"Blvd","Street","Cv","Rd","Dr","Circle","Lane","Route"};
-		 for(int i = 0;i<10;i++) {
+		 for(int i = 0;i<5;i++) {
 			children.add(new Child(names[(int)(Math.random()*names.length)] + " " + lastName[(int)(Math.random()*lastName.length)],3+(int)(Math.random()*9),100+(int)(Math.random() * 800) + " " + address[(int)(Math.random()*address.length)] + " " + addMod[(int)(Math.random()*addMod.length)]));
 		}
 		 
@@ -126,7 +126,7 @@ public class SantaManager extends JPanel {
 		 textPanel = new JPanel(true);
 		 	
 		 leftPanel = new JPanel(true);
-		 
+		 text = new JTextPane();
 		 
 		 	setBackground(SANTA_RED);
 	        inputPanel = new JPanel();
@@ -142,6 +142,7 @@ public class SantaManager extends JPanel {
 	        text.setBackground(Color.BLACK);
 	        text.setForeground(Color.WHITE);
 	        text.setFont(new Font("Monospaced", Font.PLAIN, 20));
+	        text.setFocusable(false);
 	        
 	        
 	        input = new JTextField();
