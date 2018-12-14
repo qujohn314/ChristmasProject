@@ -4,6 +4,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
@@ -23,10 +26,70 @@ public class SantaManager extends JPanel {
 	private JLabel label;
 	private JPanel inputPanel, textPanel,leftPanel;
 	public JTextField input;
+	public Map<Child,ArrayList<Action>> niceList;
+	public Map<Child,ArrayList<Action>> naughtyList;
+	public ArrayList<Child> children;
+	
 	
 	public SantaManager() {
 		init();
+		
+		initChildren();
+		
+		append(text,getChildren(),Color.WHITE,15,false);
+
 	}
+	
+	public void addNiceAction() {
+		
+	}
+	
+	public void addBadAction() {
+		
+	}
+	
+	public String getChildren() {
+		String output = "";
+		for(int i = 0;i<children.size();i++) 
+			output += i + " " + children.get(i) + "\n";
+		return output;
+	}
+	
+	private void initChildren() {
+		 String[] names = {"Henry","Avery","Tyrone","Isha","Kelly","Melanie","Jack","James","Dennis","Quincy","Josh","Matthew","Linda","Lindy","Marissa","Chelsea","Catherine","Zack","Yusef","Yaazan","Al","Allen","Quinton","Hash","Jun","Jing","Lee","Peter","Jacob","Anthony","Luna","Samantha","Jon","Neil","Alice","Java","Bean","Sue","Billy","Lisa","Elise"};
+		 String[] lastName = {"Johnson","Krul","Gul","Jones","Hundson","Krause","Haws","Hawkinson","Black","Snape","Vanes","Donners","Hundley","Abbey","Barrot","Jenkins","Hanes","Holmes","Seebs","Emerson","Stein","Marx","Himms","Hughes","Ford","Dimble","Lee","Peters","Peterson","Rickard","Wechsler","Caesar","Moon","Bargs","Biggs","Cruz","Clause","Rickard","Hans"};
+		 String[] address = {"Midnight","Moonlight","Seeker","Mini","China","Septic","Hectic","Search","Dirt","Discovery","Paso Fino","Pandesa","Kneely","Sweet","Merry","Cream","Caroline","Main","Deppy","Rim","Wheel","Bueno","Sunset","Placent","Star","Shiny","Pencil","Arctic","Cyclical","Leather","Slaughter","Juniper","Ash","Moist","Acryllic","Flappy","Whiskey"};
+		 String[] addMod = {"Blvd","Street","Cv","Rd","Dr","Circle","Lane","Route"};
+		 for(int i = 0;i<10;i++) {
+			children.add(new Child(names[(int)(Math.random()*names.length)] + " " + lastName[(int)(Math.random()*lastName.length)],3+(int)(Math.random()*9),100+(int)(Math.random() * 800) + " " + address[(int)(Math.random()*address.length)] + " " + addMod[(int)(Math.random()*addMod.length)]));
+		}
+		 
+		 for(Child x : children) {
+				niceList.put(x, new ArrayList<Action>());
+				naughtyList.put(x, new ArrayList<Action>());
+		}
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
 	
 	private static void append(JTextPane p, String n, Color c,int size, boolean bold) {
     	
@@ -55,14 +118,11 @@ public class SantaManager extends JPanel {
         return border3;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
 	private void init() {
+		children = new ArrayList<Child>();
+		niceList = new HashMap<Child,ArrayList<Action>>();
+		naughtyList = new HashMap<Child,ArrayList<Action>>();
+		
 		 textPanel = new JPanel(true);
 		 	
 		 leftPanel = new JPanel(true);
