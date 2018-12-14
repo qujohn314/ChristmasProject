@@ -56,11 +56,11 @@ public class SantaManager extends JPanel {
 	}
 	
 	private void initChildren() {
-		 String[] names = {"Henry","Avery","Tyrone","Isha","Kelly","Melanie","Jack","James","Dennis","Quincy","Josh","Matthew","Linda","Lindy","Marissa","Chelsea","Catherine","Zack","Yusef","Yaazan","Al","Allen","Quinton","Hash","Jun","Jing","Lee","Peter","Jacob","Anthony","Luna","Samantha","John","Neil","Alice","Java","Bean","Sue","Billy","Lisa","Elise","Erik","Eric","Austin"};
+		 String[] names = {"Henry","Avery","Tyrone","Isha","Kelly","Melanie","Jack","James","Dennis","Quincy","Josh","Matthew","Linda","Lindy","Marissa","Chelsea","Catherine","Zack","Yusef","Yaazan","Al","Allen","Quinton","Hash","Jun","Jing","Lee","Peter","Jacob","Anthony","Luna","Samantha","John","Neil","Alice","Java","Bean","Sue","Billy","Lisa","Elise","Erik","Eric","Austin","Ryan","Christian","Justin"};
 		 String[] lastName = {"Johnson","Krul","Gul","Jones","Hundson","Krause","Haws","Hawkinson","Black","Snape","Vanes","Donners","Hundley","Abbey","Barrot","Jenkins","Hanes","Holmes","Seebs","Emerson","Stein","Marx","Himms","Hughes","Ford","Dimble","Lee","Peters","Peterson","Rickard","Wechsler","Caesar","Moon","Bargs","Biggs","Cruz","Clause","Rickard","Hans","Ritz"};
-		 String[] address = {"Midnight","Moonlight","Seeker","Mini","China","Septic","Hectic","Paladino","Search","Dirt","Discovery","Paso Fino","Pandesa","Kneely","Sweet","Merry","Cream","Caroline","Main","Deppy","Rim","Wheel","Bueno","Sunset","Placent","Star","Shiny","Pencil","Arctic","Cyclical","Leather","Slaughter","Juniper","Ash","Moist","Acryllic","Flappy","Whiskey","Gamer","Erotic","ABC","Pacific"};
-		 String[] addMod = {"Blvd","Street","Cv","Rd","Dr","Circle","Lane","Route"};
-		 for(int i = 0;i<5;i++) {
+		 String[] address = {"Midnight","Moonlight","Seeker","Mini","China","Septic","Hectic","Paladino","Search","Dirt","Discovery","Paso Fino","Pandesa","Kneely","Sweet","Merry","Cream","Caroline","Main","Deppy","Rim","Wheel","Bueno","Sunset","Placent","Star","Shiny","Pencil","Arctic","Cyclical","Leather","Slaughter","Juniper","Ash","Moist","Acryllic","Electric","Flappy","Whiskey","Gamer","Erotic","ABC","Pacific"};
+		 String[] addMod = {"Blvd","Street","Cv","Rd","Dr","Circle","Lane","Route","Ave"};
+		 for(int i = 0;i<11;i++) {
 			children.add(new Child(names[(int)(Math.random()*names.length)] + " " + lastName[(int)(Math.random()*lastName.length)],3+(int)(Math.random()*9),100+(int)(Math.random() * 800) + " " + address[(int)(Math.random()*address.length)] + " " + addMod[(int)(Math.random()*addMod.length)]));
 		}
 		 
