@@ -1,21 +1,24 @@
+package children;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class Child {
+public class Child implements Comparable<Child>{
 	private String address;
 	private String name;
 	private int age;
 	private int niceScore;
-	
+	private int ID;
+	private static int IDcount = 0;
 	public Child(String n,int a,String ad) {
 		name = n;
 		age = a;
 		address = ad;
 		niceScore = 0;
+		ID = IDcount++;
 	}
 	
 	public int hashCode() {
-		return 0;
+		return ID;
 		
 	}
 	
@@ -69,5 +72,14 @@ public class Child {
 	
 	public String toString() {
 		return name + "(" + age + " years old) is nice = " + niceScore + ", " + address;
+	}
+
+	@Override
+	public int compareTo(Child c) {
+		if(this.niceScore > c.getNiceScore())
+			return -1;
+		else if(this.niceScore < c.getNiceScore())
+			return 1;
+		return 0;
 	}
 }

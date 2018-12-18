@@ -1,3 +1,4 @@
+package backend;
 
 
 import java.awt.event.*;
@@ -5,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-public class ActionHandler implements ActionListener{
+public class ActionListenerHandler implements ActionListener{
 
     final List<Integer> holderInt = new LinkedList<Integer>();
     final List<String> holderString = new LinkedList<String>();
@@ -14,7 +15,7 @@ public class ActionHandler implements ActionListener{
 
     String text;
 
-    public ActionHandler(SantaManager r){
+    public ActionListenerHandler(SantaManager r){
         runner = r;
     }
 

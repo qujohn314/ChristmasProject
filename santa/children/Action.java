@@ -1,9 +1,10 @@
+package children;
 
 public class Action {
 	private String desc;
 	private int score;
 	
-	public Action(int s, String d) {
+	public Action(String d, int s) {
 		score = s;
 		desc = d;
 	}
@@ -22,6 +23,10 @@ public class Action {
 
 	public void setScore(int score) {
 		this.score = score;
+	}
+	
+	public String toString(){
+		return desc;
 	}
 	
 }
